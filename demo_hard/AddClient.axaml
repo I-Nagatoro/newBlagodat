@@ -1,0 +1,72 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="demo_hard.AddClient"
+        Title="Добавление клиента"
+        SizeToContent="WidthAndHeight"
+        FontFamily="Segoe UI"
+        Background="#FAFAFA"
+        Padding="20">
+    
+    <Grid RowDefinitions="Auto,*,Auto" ColumnDefinitions="*">
+        
+        <TextBlock Text="Добавление нового клиента"
+                   FontSize="22"
+                   FontWeight="SemiBold"
+                   HorizontalAlignment="Center"
+                   Margin="0,0,0,20"/>
+
+        <ScrollViewer Grid.Row="1">
+            <StackPanel Width="400" HorizontalAlignment="Center" Spacing="12">
+
+                <ItemsControl>
+                    <ItemsControl.Items>
+                        <StackPanel>
+                            <TextBlock Text="Код клиента (8 цифр):"/>
+                            <TextBox x:Name="CodeBox" Watermark="Введите 8-значный код"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <TextBlock Text="Email:"/>
+                            <TextBox x:Name="EmailBox" Watermark="example@domain.com"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <TextBlock Text="ФИО клиента:"/>
+                            <TextBox x:Name="FioBox" Watermark="Иванов Иван Иванович"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <TextBlock Text="Адрес:"/>
+                            <TextBox x:Name="AddressBox" Watermark="г. Москва, ул. Примерная, д.1"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <TextBlock Text="Дата рождения:"/>
+                            <TextBox x:Name="BirthdayBox" Watermark="дд.мм.гггг"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <TextBlock Text="Серия и номер паспорта:"/>
+                            <TextBox x:Name="PassportBox" Watermark="1234567890"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <TextBlock Text="Пароль:"/>
+                            <TextBox x:Name="PasswordBox" PasswordChar="•" Watermark="Введите пароль"/>
+                        </StackPanel>
+                    </ItemsControl.Items>
+                </ItemsControl>
+
+                <Border x:Name="MessageBorder"
+                        Background="#FFECEC"
+                        CornerRadius="6"
+                        Padding="10"
+                        IsVisible="False">
+                    <TextBlock x:Name="MessageText" TextWrapping="Wrap"/>
+                </Border>
+            </StackPanel>
+        </ScrollViewer>
+		
+        <StackPanel Grid.Row="2" Orientation="Horizontal"
+                    HorizontalAlignment="Right"
+                    Margin="0,20,0,0" Spacing="10">
+            <Button Content="Назад" Width="120" Click="BackOnOrder"/>
+            <Button Content="Добавить" Width="120" Click="AddClient_OnClick"
+                    Classes="Primary"/>
+        </StackPanel>
+    </Grid>
+</Window>

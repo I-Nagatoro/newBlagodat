@@ -1,0 +1,76 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        x:Class="demo_hard.UserDashboardWindow"
+        x:CompileBindings="True"
+        Title="Панель пользователя"
+        Width="900" Height="600"
+        MinWidth="700" MinHeight="500"
+        Background="#1E1E2F"
+        FontFamily="Segoe UI">
+
+    <Grid RowDefinitions="Auto,*,Auto" ColumnDefinitions="250,*" Margin="20" >
+
+        <Border Grid.RowSpan="3" Grid.Column="0" Background="#2D2D3F" Padding="20">
+            <StackPanel Spacing="25">
+            <Border Width="100" Height="100" CornerRadius="0" BorderBrush="#90CAF9" BorderThickness="2" HorizontalAlignment="Center">
+                <Image x:Name="UserImage" Width="90" Height="90" Stretch="UniformToFill"/>
+            </Border>
+
+            <StackPanel Spacing="4">
+                <TextBlock Foreground="White" FontSize="16" FontWeight="Bold" TextAlignment="Center">
+                    <Run Text="ФИО: "/>
+                    <Run x:Name="FioTextBlock"/>
+                </TextBlock>
+                <TextBlock Foreground="#B0BEC5" FontSize="14" TextAlignment="Center">
+                    <Run Text="Роль: "/>
+                    <Run x:Name="RoleTextBlock"/>
+                </TextBlock>
+            </StackPanel>
+
+            <Button x:Name="CreateOrderButton"
+                    Content="🛒 Новый заказ"
+                    Click="OnCreateOrderClick"
+                    Background="#388E3C"
+                    Foreground="White"
+                    HorizontalContentAlignment="Left"
+                    Width="200" Height="40"/>
+
+            <Button x:Name="HistoryButton"
+                    Content="📜 История входов"
+                    Click="OnViewHistoryClick"
+                    Background="#0288D1"
+                    Foreground="White"
+                    HorizontalContentAlignment="Left"
+                    Width="200" Height="40"/>
+            </StackPanel>
+        </Border>
+
+        <!-- Центральный контент -->
+        <StackPanel Grid.Column="1" Grid.Row="1" Spacing="20" Margin="30,0" VerticalAlignment="Center" HorizontalAlignment="Center">
+            
+            <Border Background="#33334D" CornerRadius="10" Padding="20" Width="400">
+                <StackPanel Spacing="10" HorizontalAlignment="Center">
+                    <TextBlock Text="Состояние сессии" FontWeight="Bold" FontSize="18" Foreground="White"/>
+                    <TextBlock x:Name="SessionTimerText" FontSize="24" Foreground="#FFEB3B" TextAlignment="Center"/>
+                    <TextBlock x:Name="SessionWarningText" Foreground="#FF8A65" FontSize="14" TextAlignment="Center"/>
+                </StackPanel>
+            </Border>
+
+            <Border Background="#2C2C3C" CornerRadius="10" Padding="15" Width="400">
+                <TextBlock Text="Добро пожаловать в систему проката." 
+                           FontSize="14" Foreground="#B0BEC5" TextAlignment="Center"/>
+            </Border>
+        </StackPanel>
+
+        <!-- Нижняя панель -->
+        <Border Grid.Row="2" Grid.Column="1" Padding="10" Background="#2D2D3F" CornerRadius="8">
+            <Button Content="⏻ Выйти" Click="OnLogoutClick"
+                    Background="#D32F2F" Foreground="White"
+                    HorizontalAlignment="Right"
+                    Width="120" Height="40"/>
+        </Border>
+    </Grid>
+</Window>

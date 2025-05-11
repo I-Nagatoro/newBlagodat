@@ -1,0 +1,153 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="demo_hard.SallerWindow"
+        x:CompileBindings="False"
+        Title="Оформление заказа"
+        Width="1350" Height="650"
+        Background="#1E1E2F"
+        FontFamily="Segoe UI"
+        Padding="20">
+
+  <Grid ColumnDefinitions="2*,3*" RowDefinitions="Auto,*">
+    <TextBlock Grid.ColumnSpan="2"
+               Text="🛒 Оформление заказа"
+               FontSize="28"
+               FontWeight="Bold"
+               Foreground="White"
+               Margin="0,0,0,20"/>
+
+    <StackPanel Grid.Row="1" Spacing="20" Margin="0,0,20,0">
+      <Border Background="#2A2A3E" CornerRadius="8" Padding="15">
+        <StackPanel>
+          <TextBlock Text="Номер заказа"
+                     FontSize="14"
+                     Foreground="#90CAF9"/>
+          <TextBox x:Name="OrderNumberField"
+                   IsReadOnly="True"
+                   Watermark="Будет сгенерирован автоматически"
+                   Background="#33334D"
+                   Foreground="White"
+                   BorderBrush="#44445A"
+                   Padding="8"
+                   FontSize="16"/>
+        </StackPanel>
+      </Border>
+
+      <Border Background="#2A2A3E" CornerRadius="8" Padding="15">
+        <StackPanel Spacing="10">
+          <TextBlock Text="Клиент"
+                     FontSize="14"
+                     Foreground="#90CAF9"/>
+          <StackPanel Orientation="Horizontal" Spacing="10">
+            <ComboBox ItemsSource="{Binding ClientList}"
+                      SelectedItem="{Binding ChosenClient}"
+                      DisplayMemberBinding="{Binding Fio}"
+                      Background="#33334D"
+                      Foreground="White"
+                      BorderBrush="#44445A"
+                      Width="240"
+                      x:Name="ClientComboBox"/>
+            <Button Content="➕ Добавить" 
+                    Click="AddClientClick"
+                    Background="#388E3C" 
+                    Foreground="White"
+                    Padding="8,4"
+                    CornerRadius="6"/>
+          </StackPanel>
+        </StackPanel>
+      </Border>
+
+      <Border Background="#2A2A3E" CornerRadius="8" Padding="15">
+        <StackPanel Spacing="10">
+          <TextBlock Text="Услуга"
+                     FontSize="14"
+                     Foreground="#90CAF9"/>
+          <StackPanel Orientation="Horizontal" Spacing="10">
+            <ComboBox ItemsSource="{Binding ServiceList}"
+                      SelectedItem="{Binding ChosenService}"
+                      DisplayMemberBinding="{Binding ServiceName}"
+                      Background="#33334D"
+                      Foreground="White"
+                      BorderBrush="#44445A"
+                      Width="240"/>
+            <TextBox Text="{Binding MinutesSelected}"
+                     Width="80"
+                     Watermark="Минуты"
+                     Background="#33334D"
+                     Foreground="White"
+                     BorderBrush="#44445A"
+                     Padding="8"/>
+            <Button Content="➕ Добавить" 
+                    Click="AddServiceClick"
+                    Background="#0288D1"
+                    Foreground="White"
+                    Padding="8,4"
+                    CornerRadius="6"/>
+          </StackPanel>
+        </StackPanel>
+      </Border>
+    </StackPanel>
+
+    <Border Grid.Row="1" Grid.Column="1"
+            Background="#2A2A3E"
+            CornerRadius="8"
+            Padding="15">
+      <StackPanel Spacing="15">
+        <TextBlock Text="Выбранные услуги"
+                   FontSize="16"
+                   FontWeight="SemiBold"
+                   Foreground="#90CAF9"/>
+
+        <ScrollViewer Height="380">
+          <ItemsControl x:Name="BasketServices"
+                        ItemsSource="{Binding BasketCollection}">
+            <ItemsControl.ItemTemplate>
+              <DataTemplate>
+                <Border Background="#33334D"
+                        CornerRadius="6"
+                        Padding="10"
+                        Margin="0,5">
+                  <Grid ColumnDefinitions="2*,Auto,Auto">
+                    <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="{Binding ServiceName}"
+                               Foreground="White"
+                               VerticalAlignment="Center"/>
+                    <TextBlock Text="{Binding TimeInMinutes, StringFormat='{}{0} мин'}"
+                               Foreground="#B0BEC5"
+                               Margin="20,0"
+                               VerticalAlignment="Center"/>
+                    <Button Content="🗑️ Удалить"
+                            Click="RemoveServiceClick"
+                            CommandParameter="{Binding}"
+                            Background="#D32F2F"
+                            Foreground="White"
+                            CornerRadius="6"
+                            Padding="6,2"
+                            Grid.Column="2"/>
+                    </StackPanel>
+                  </Grid>
+                </Border>
+              </DataTemplate>
+            </ItemsControl.ItemTemplate>
+          </ItemsControl>
+        </ScrollViewer>
+
+        <StackPanel>
+          <Button Content="✅ Оформить заказ"
+                  Click="CompleteOrderClick"
+                  Background="#4CAF50"
+                  Foreground="White"
+                  FontSize="16"
+                  Padding="10"
+                  CornerRadius="6"/>
+          <TextBlock x:Name="InfoText"
+                     Foreground="#FFCDD2"
+                     FontSize="14"
+                     TextWrapping="Wrap"
+                     HorizontalAlignment="Center"
+                     Margin="0,10,0,0"/>
+        </StackPanel>
+      </StackPanel>
+    </Border>
+  </Grid>
+</Window>
