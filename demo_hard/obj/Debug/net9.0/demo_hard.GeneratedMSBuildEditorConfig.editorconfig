@@ -15,29 +15,29 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = demo_hard
-build_property.ProjectDir = C:\Users\sokol\RiderProjects\Blagodat\demo_hard\
+build_property.ProjectDir = C:\Users\prdb\RiderProjects\newBlagodat\demo_hard\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.EffectiveAnalysisLevelStyle = 9.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/sokol/RiderProjects/Blagodat/demo_hard/AddClient.axaml]
+[C:/Users/prdb/RiderProjects/newBlagodat/demo_hard/AddClient.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/sokol/RiderProjects/Blagodat/demo_hard/App.axaml]
+[C:/Users/prdb/RiderProjects/newBlagodat/demo_hard/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/sokol/RiderProjects/Blagodat/demo_hard/History.axaml]
+[C:/Users/prdb/RiderProjects/newBlagodat/demo_hard/History.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/sokol/RiderProjects/Blagodat/demo_hard/MainWindow.axaml]
+[C:/Users/prdb/RiderProjects/newBlagodat/demo_hard/MainWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/sokol/RiderProjects/Blagodat/demo_hard/OrderBarcode.axaml]
+[C:/Users/prdb/RiderProjects/newBlagodat/demo_hard/OrderBarcode.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/sokol/RiderProjects/Blagodat/demo_hard/SallerWindow.axaml]
+[C:/Users/prdb/RiderProjects/newBlagodat/demo_hard/SallerWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/sokol/RiderProjects/Blagodat/demo_hard/UserDashboardWindow.axaml]
+[C:/Users/prdb/RiderProjects/newBlagodat/demo_hard/UserDashboardWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml

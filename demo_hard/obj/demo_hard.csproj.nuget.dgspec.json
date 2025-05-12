@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\sokol\\RiderProjects\\Blagodat\\demo_hard\\demo_hard.csproj": {}
+    "C:\\Users\\prdb\\RiderProjects\\newBlagodat\\demo_hard\\demo_hard.csproj": {}
   },
   "projects": {
-    "C:\\Users\\sokol\\RiderProjects\\Blagodat\\demo_hard\\demo_hard.csproj": {
+    "C:\\Users\\prdb\\RiderProjects\\newBlagodat\\demo_hard\\demo_hard.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\sokol\\RiderProjects\\Blagodat\\demo_hard\\demo_hard.csproj",
+        "projectUniqueName": "C:\\Users\\prdb\\RiderProjects\\newBlagodat\\demo_hard\\demo_hard.csproj",
         "projectName": "demo_hard",
-        "projectPath": "C:\\Users\\sokol\\RiderProjects\\Blagodat\\demo_hard\\demo_hard.csproj",
-        "packagesPath": "C:\\Users\\sokol\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\sokol\\RiderProjects\\Blagodat\\demo_hard\\obj\\",
+        "projectPath": "C:\\Users\\prdb\\RiderProjects\\newBlagodat\\demo_hard\\demo_hard.csproj",
+        "packagesPath": "C:\\Users\\prdb\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\prdb\\RiderProjects\\newBlagodat\\demo_hard\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\sokol\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\prdb\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -117,7 +117,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

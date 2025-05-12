@@ -5,6 +5,7 @@
       <map>
         <entry key="demo_hard/AddClient.axaml" value="demo_hard/demo_hard.csproj" />
         <entry key="demo_hard/FunctionWindow.axaml" value="demo_hard/demo_hard.csproj" />
+        <entry key="demo_hard/History.axaml" value="demo_hard/demo_hard.csproj" />
         <entry key="demo_hard/HistoryWindow.axaml" value="demo_hard/demo_hard.csproj" />
         <entry key="demo_hard/MainWindow.axaml" value="demo_hard/demo_hard.csproj" />
         <entry key="demo_hard/Order.axaml" value="demo_hard/demo_hard.csproj" />

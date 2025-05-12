@@ -3,40 +3,50 @@
         x:Class="demo_hard.History"
         x:CompileBindings="False"
         Title="История входов"
-        Width="700" Height="500">
-    <StackPanel Margin="10" Spacing="10">
+        Width="720" Height="700">
 
-     
-        <StackPanel Orientation="Horizontal" Spacing="10">
-            <ComboBox x:Name="UserFilter" Width="120" PlaceholderText="Все"/>
-            <ComboBox x:Name="SortFilter" Width="120" SelectedIndex="0">
-                <ComboBoxItem>Новые</ComboBoxItem>
-                <ComboBoxItem>Старые</ComboBoxItem>
-            </ComboBox>
-            <ComboBox x:Name="StatusFilter" Width="120" SelectedIndex="0">
-                <ComboBoxItem>Все</ComboBoxItem>
-                <ComboBoxItem>Успешные</ComboBoxItem>
-                <ComboBoxItem>Неуспешные</ComboBoxItem>
-            </ComboBox>
-            <Button x:Name="ResetBtn" Content="Сброс" />
+    <ScrollViewer>
+        <StackPanel Margin="10" Spacing="10">
+            <StackPanel Orientation="Horizontal" Spacing="10">
+                <ComboBox x:Name="UserFilter" Width="120" PlaceholderText="Все"/>
+                <ComboBox x:Name="SortFilter" Width="120" SelectedIndex="0">
+                    <ComboBoxItem>Новые</ComboBoxItem>
+                    <ComboBoxItem>Старые</ComboBoxItem>
+                </ComboBox>
+                <ComboBox x:Name="StatusFilter" Width="120" SelectedIndex="0">
+                    <ComboBoxItem>Все</ComboBoxItem>
+                    <ComboBoxItem>Успешные</ComboBoxItem>
+                    <ComboBoxItem>Неуспешные</ComboBoxItem>
+                </ComboBox>
+                <Button x:Name="ResetBtn" Content="Сброс" />
+            </StackPanel>
+            <ListBox x:Name="HistoryList" Height="350">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Margin="5">
+                            <TextBlock Text="{Binding LastEnter, StringFormat=dd.MM.yyyy HH:mm}" FontWeight="Bold"/>
+                            <TextBlock>
+                                <Run Text="{Binding Login}"/>
+                                <Run Text=" — "/>
+                                <Run Text="{Binding EnterStatus}"/>
+                            </TextBlock>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            <TextBlock Text="Сводная статистика" FontWeight="Bold" FontSize="16"/>
+            <TextBlock x:Name="SummaryText" FontSize="14" Margin="0,0,0,10"/>
+            <TextBlock Text="Попытки по датам" FontWeight="Bold"/>
+            <ListBox x:Name="ByDateList" Height="120" Margin="0,0,0,10">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal" Margin="5">
+                            <TextBlock Text="{Binding Date}" Width="120"/>
+                            <TextBlock Text="{Binding Count}" Width="100"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
         </StackPanel>
-
-
-        <ListBox x:Name="HistoryList" Height="350">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel Margin="5">
-                        <TextBlock Text="{Binding LastEnter, StringFormat=dd.MM.yyyy HH:mm}"
-                                   FontWeight="Bold"/>
-                        <TextBlock>
-                            <Run Text="{Binding Login}"/>
-                            <Run Text=" — "/>
-                            <Run Text="{Binding EnterStatus}"/>
-                        </TextBlock>
-                    </StackPanel>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
-
-    </StackPanel>
+    </ScrollViewer>
 </Window>
